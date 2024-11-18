@@ -1,2 +1,2 @@
-# YALE Blade
-YALE™ Blade Component is a Laravel UI Component developed by OsawereAO™ (Anthony Osawere)
+# YALE™ Component
+YALE™ Component is a Laravel Blade Component developed by OsawereAO™ (Anthony Osawere)
