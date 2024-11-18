@@ -18,4 +18,4 @@
     'onfocusblur' => true,
 ])
 
-<x-bluc.form.field.text :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete :focus=$focus :blur=$blur :onfocusblur=$onfocusblur type="password" {{ $attributes }} />
+<x-yale.form.field.text :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete :focus=$focus :blur=$blur :onfocusblur=$onfocusblur type="password" {{ $attributes }} />
