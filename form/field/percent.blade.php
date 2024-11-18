@@ -17,6 +17,6 @@
     'min' => '0.00',
     'max' => '1000.00',
 ])
-<x-veo.form.input.field.number :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete :step="$step" :min="$min" :max="$max" {{ $attributes }} />
+<x-yale.form.field.number :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete :step="$step" :min="$min" :max="$max" {{ $attributes }} />
 
 {{-- {{ $attributes->except(['title', 'description']) }} --}}
