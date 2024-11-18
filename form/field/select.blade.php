@@ -15,25 +15,24 @@
 ])
 
 @php
-	FormX::tag(id: $id, name: $name, title: $title);
+	FormX::set()->tag(id: $id, name: $name, title: $title);
 	$css = $errors->has($name) ? ' is-invalid' : '';
 
-	$obind = FormX::obind(obind: $obind, name: $name);
-	$ochange = FormX::ochange(ochange: $ochange, name: $name);
-	$value = FormX::value($value, 'select');
-	$disable = FormX::disable($disable);
+	$obind = FormX::set()->obind(obind: $obind, name: $name);
+	$ochange = FormX::set()->ochange(ochange: $ochange, name: $name);
+	$value = FormX::set()->value($value, 'select');
+	$disable = FormX::set()->disable($disable);
 
-	$attrID = FormX::attribute(['id' => $id]);
-	$attrName = FormX::attribute(['name' => $name]);
-	$attrTitle = FormX::attribute(['title' => $title]);
-	$wireBind = FormX::attribute(['obind' => $obind]);
-	$wireChange = FormX::attribute(['ochange' => $ochange]);
+	$attrID = FormX::set()->attribute(['id' => $id]);
+	$attrName = FormX::set()->attribute(['name' => $name]);
+	$attrTitle = FormX::set()->attribute(['title' => $title]);
+	$wireBind = FormX::set()->attribute(['obind' => $obind]);
+	$wireChange = FormX::set()->attribute(['ochange' => $ochange]);
 	$validateJS = FormX::validateJS($id, $btnID, $validateJS);
 
 	if ($optionLabel === true) {
 	    $optionLabel = 'Select an option';
 	}
-
 @endphp
 
 <select {{ $attributes->merge(['class' => 'form-select' . $css]) }} @focus="on{{ $id }} = true" @blur="on{{ $id }} = false" {!! $attrID !!} {!! $attrName !!} {!! $attrTitle !!} {!! $validateJS !!} {!! $disable !!} {!! $wireBind !!} {!! $wireChange !!}>
