@@ -1,7 +1,6 @@
-@props(['label' => 'Save', 'moduleX' => '', 'id' => null])
+@props(['label' => 'save', 'id' => null, 'moduleX' => ''])
 @php
-	if (!empty($moduleX)) {
-	    $label .= ' ' . $moduleX;
-	}
+	FormX::set()->button($label, $id, $moduleX);
 @endphp
-<button wire:loading.attr="disabled" wire:target="save" id="{{ $id }}" type="submit" class="btn btn-block btn-tertiary mx-2">{{ $label }}</button>
+
+<button wire:loading.attr="disabled" wire:target="save" id="{{ $id }}" type="submit" class="btn btn-block btn-tertiary mx-2" title="{{ $label }}">{{ $label }}</button>
