@@ -17,4 +17,4 @@
     'max' => '',
 ])
 
-<x-veo.form.input.field.text :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete type="number" step="{{ $step }}" min="{{ $min }}" max="{{ $max }}" {{ $attributes }} />
+<x-yale.form.field.text :id="$id" :name="$name" :title="$title" :placeholder="$placeholder" :disable=$disable :obind=$obind :ochange=$ochange :validateJS=$validateJS :btnID=$btnID :value=$value :ocomplete=$ocomplete type="number" step="{{ $step }}" min="{{ $min }}" max="{{ $max }}" {{ $attributes }} />
