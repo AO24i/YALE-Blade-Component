@@ -15,21 +15,21 @@
 ])
 
 @php
-	FormX::tag(id: $id, name: $name, placeholder: $placeholder, title: $title);
+	FormX::set()->tag(id: $id, name: $name, placeholder: $placeholder, title: $title);
 	$css = $errors->has($name) ? ' is-invalid' : '';
 
-	$obind = FormX::obind(obind: $obind, name: $name);
-	$ochange = FormX::ochange(ochange: $ochange, name: $name);
-	$value = FormX::value($value, 'textarea');
-	$disable = FormX::disable($disable);
+	$obind = FormX::set()->obind(obind: $obind, name: $name);
+	$ochange = FormX::set()->ochange(ochange: $ochange, name: $name);
+	$value = FormX::set()->value($value, 'textarea');
+	$disable = FormX::set()->disable($disable);
 
-	$attrID = FormX::attribute(['id' => $id]);
-	$attrName = FormX::attribute(['name' => $name]);
-	$attrTitle = FormX::attribute(['title' => $title]);
-	$wireBind = FormX::attribute(['obind' => $obind]);
-	$wireChange = FormX::attribute(['ochange' => $ochange]);
-	$attrTextrows = FormX::attribute(['textrows' => $textrows]);
-	$wirePlaceholder = FormX::placeholder($id, $placeholder);
+	$attrID = FormX::set()->attribute(['id' => $id]);
+	$attrName = FormX::set()->attribute(['name' => $name]);
+	$attrTitle = FormX::set()->attribute(['title' => $title]);
+	$wireBind = FormX::set()->attribute(['obind' => $obind]);
+	$wireChange = FormX::set()->attribute(['ochange' => $ochange]);
+	$attrTextrows = FormX::set()->attribute(['textrows' => $textrows]);
+	$wirePlaceholder = FormX::set()->placeholder($id, $placeholder);
 	$validateJS = FormX::validateJS($id, $btnID, $validateJS);
 @endphp
 
