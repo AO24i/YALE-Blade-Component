@@ -1,7 +1,6 @@
-@props(['id' => null, 'label' => 'Clear', 'moduleX' => ''])
+@props(['label' => 'clear', 'id' => null, 'moduleX' => ''])
 @php
-	if (!empty($moduleX)) {
-	    $label .= ' ' . $moduleX;
-	}
+	FormX::set()->button($label, $id, $moduleX);
 @endphp
-<button wire:loading.attr="disabled" wire:target="save" @click="$wire.edit('{{$id}}')" onclick="jsHideError('actionBtn');" type="button" class="btn btn-block btn-outline-gray-300 mx-2">{{ $label }}</button>
+
+<button wire:loading.attr="disabled" wire:target="save" @click="$wire.edit('{{ $id }}')" onclick="jsHideError('actionBtn');" type="button" class="btn btn-block btn-outline-gray-300 mx-2">{{ $label }}</button>
