@@ -4,6 +4,10 @@
 @endphp
 
 <button wire:loading.attr="disabled" id='{{ $id }}' {{ $attributes->merge(['type' => $type, 'class' => 'btn btn-' . $scheme . ' text-uppercase mx-2']) }} title="{{ $title }}">
-	<span wire:loading.remove>{{ $slot->isEmpty() ? (!empty($label) ? $label : 'Send') : $slot }}</span>
-	<span wire:loading>Wait...</span>
+	@unless ($type === 'reset')
+		<span wire:loading.remove>{{ $slot->isEmpty() ? (!empty($label) ? $label : 'Send') : $slot }}</span>
+		<span wire:loading>Wait...</span>
+	@else
+		{{ $slot->isEmpty() ? (!empty($label) ? $label : 'Send') : $slot }}
+	@endunless
 </button>
