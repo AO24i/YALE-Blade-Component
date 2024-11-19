@@ -3,6 +3,7 @@
 	FormX::set()->button(label: $label, id: $id, title: $title, type: $type, scheme: $scheme);
 @endphp
 
-<button id='{{ $id }}' {{ $attributes->merge(['type' => $type, 'class' => 'btn btn-' . $scheme . ' text-uppercase mx-2']) }} title="{{ $title }}">
-	{{ $slot->isEmpty() ? (!empty($label) ? $label : 'Send') : $slot }}
+<button wire:loading.attr="disabled" id='{{ $id }}' {{ $attributes->merge(['type' => $type, 'class' => 'btn btn-' . $scheme . ' text-uppercase mx-2']) }} title="{{ $title }}">
+	<span wire:loading.remove>{{ $slot->isEmpty() ? (!empty($label) ? $label : 'Send') : $slot }}</span>
+	<span wire:loading>Wait...</span>
 </button>
