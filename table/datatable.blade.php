@@ -1,4 +1,4 @@
-@props(['head', 'body', 'foot', 'tableID' => 'dataRows', 'recordX' => null])
+@props(['head', 'body', 'foot', 'tableID' => 'dataRows', 'recordX' => []])
 @php
 	$th = preg_match_all('/<th\b[^>]*>/', $head->toHtml());
 	$thCount = $th + 2;
@@ -12,12 +12,9 @@
 				<th class="border-end-secondary col-1 text-center" scope="col" colspan="1">Action</th>
 			</tr>
 		</thead>
-
 		<tbody>
 			@empty($recordX)
-				<tr>
-					<td colspan="{{ $thCount }}" class="text-center text-danger py-4">No record found!</td>
-				</tr>
+				<x.yale.table.no-records colspan="{{ $thCount }}" />
 			@else
 				{{ $body }}
 			@endempty
